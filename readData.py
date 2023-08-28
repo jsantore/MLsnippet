@@ -8,7 +8,8 @@ def read_data(file_name:str)->list[tuple]:
         data_tuple = line.split(':')
         if not data_tuple[1].isnumeric():
             continue  # the first line is the file format
-        data_vector.append(data_tuple)
+        data_item = (data_tuple[0], int(data_tuple[1]), int(data_tuple[2]))
+        data_vector.append(data_item)
     return data_vector
 
 
